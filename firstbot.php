@@ -33,7 +33,11 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
-            reply_msg($content,$replyToken);      
+            if($txtin == 'โหลๆ')
+            {
+                    $txtback = '12 โหล';
+            }
+            reply_msg($txtback,$replyToken);      
         }
     }
 }
