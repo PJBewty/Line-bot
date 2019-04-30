@@ -36,7 +36,7 @@ function search()
 							i++;
                         }  
                         var num = document.getElementById('search_result');
-                        num.innerHTML = 'ผลการค้นหา' + i +  'รายการ';
+                        num.innerHTML = 'ผลการค้นหา ' + i +  ' รายการ';
                     }				
 			});
 }
