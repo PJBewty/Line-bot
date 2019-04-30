@@ -10,7 +10,6 @@
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="liff_search.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Sarabun|Roboto" rel="stylesheet">
-		
 	</head>
 	<body>
 		<header style="margin-bottom: 70px;">
@@ -39,7 +38,7 @@
 							<input type="text" class="form-control" placeholder="คำค้นหา" id="keyword">
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-primary btn-block" onclick="test()">ค้นหา</button>
+							<button type="button" class="btn btn-primary btn-block" onclick="search()">ค้นหา</button>
 						</div>
 					</div>
 				</div>
@@ -50,17 +49,8 @@
 					<p id="search_result">ผลการค้นหา 3 รายการ</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="card mt-2">
-							<div class="card-body">อุปกรณ์ 1</div>
-						</div>
-					</div>
-					<div class="col-lg-12">
-						<div class="card mt-2">
-							<div class="card-body">อุปกรณ์ 1</div>
-						</div>
-					</div>
+				<div class="row" id="card-area">
+					<!--Card Area-->
 				</div>
 			</div>
 		</main>

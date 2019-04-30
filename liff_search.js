@@ -3,7 +3,11 @@ function test()
     var office = document.getElementById('office_select').value;
     alert(office);
 }
-
+function render_card(equip_name)
+{
+    var card = document.getElementById('card-area')
+    card.innerHTML = card.innerHTML + '<div class="col-lg-12"><div class="card mt-2"><div class="card-body">'+equip_name+'</div></div></div>';
+}
 function search()
 {
     var office_select = document.getElementById("office_select").value
@@ -20,8 +24,17 @@ function search()
 			processData: false,
 			contentType: false,
 			success: function(response) {
-                        console.log(response);
-                        var obj = JSON.parse(response);  
+                        //console.log(response);
+                        var card = document.getElementById('card-area')
+                        card.innerHTML = '';
+                        var obj = JSON.parse(response);
+                        var i = 0;
+						while(obj[i])
+						{
+                            render_card(obj[i].equip_name);
+                            console.log(obj[i].equip_name);
+							i++;
+						}  
                     }				
 			});
 }
