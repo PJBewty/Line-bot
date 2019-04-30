@@ -34,7 +34,9 @@ function search()
                             render_card(obj[i].equip_name);
                             console.log(obj[i].equip_name);
 							i++;
-						}  
+                        }  
+                        var num = document.getElementById('search_result');
+                        num.innerHTML = 'ผลการค้นหา', i , 'รายการ';
                     }				
 			});
 }

@@ -46,7 +46,7 @@
 			<div class="container mt-2">
 				<div class="row">
 					<div class="col-lg-12">
-					<p id="search_result">ผลการค้นหา 3 รายการ</p>
+					<p id="search_result"></p>
 					</div>
 				</div>
 				<div class="row" id="card-area">
