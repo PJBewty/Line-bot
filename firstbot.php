@@ -35,12 +35,12 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
             $sql_text = "SELECT * FROM Linebot1 WHERE Keyword LIKE '%ac%'";
-            $query = mysqli_query($sql_text);
+            $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))
             {
-                    $txt_back = $txt_back."\n".$obj["lets go"];
+                    $txtback = $txtback."\n".$obj["lets go"];
             }
-            reply_msg($txt_back,$replyToken);
+            reply_msg($txtback,$replyToken);
            /* if($txtin == 'โหลๆ')
             {
                     $txtback = '12 โหล';
