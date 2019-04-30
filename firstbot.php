@@ -34,6 +34,11 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $replyToken = $event['replyToken']; //เก็บ reply token เอาไว้ตอบกลับ
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
+            $pos = strpos($txtin,"/",0);
+            $office = substr($txtin,0,$pos-1);
+            $keyword = substr($txtin,$pos+1,strlen($txtin)-$pos);
+            $txtback = $office.' '.$keyword;
+            /*
             $sql_text = "SELECT * FROM Linebot1 WHERE Keyword LIKE '%$txtin%'";
             $query = mysqli_query($conn,$sql_text);
             while($obj = mysqli_fetch_assoc($query))
@@ -44,9 +49,9 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
            /* if($txtin == 'โหลๆ')
             {
                     $txtback = '12 โหล';
-            }
+            }*/
             reply_msg($txtback,$replyToken); 
-            */
+            
         }
     }
 }
